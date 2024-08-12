@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="UiDesktopAppMaster.Controls.LoadingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UiDesktopAppMaster.Controls"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ui:LoadingScreen x:Name="loading" Visibility="Visible" Margin="0,0,0,10" />
+            <ui:TextBlock Text="Loading..." Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,124 @@
+<Page
+    x:Class="UiDesktopAppMaster.Views.Pages.DataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UiDesktopAppMaster.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:UiDesktopAppMaster.Controls"
+    xmlns:models="clr-namespace:UiDesktopAppMaster.Models"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="DataPage"
+    d:DataContext="{d:DesignInstance local:DataPage,IsDesignTimeCreatable=False}"
+    d:DesignHeight="750"
+    d:DesignWidth="850"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    ScrollViewer.CanContentScroll="False"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <controls:LoadingControl Grid.Column= "0" HorizontalAlignment="Center" x:Name="searchGridLoadingControl" Visibility="Visible"/>
+
+        <Grid x:Name="searchGrid" Visibility="Collapsed" Grid.Column= "0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <ui:TextBlock Grid.Row="0" x:Name="tbkId" Margin="0,0,10,10">
+                <Run Text="Id " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+
+            <ui:NumberBox Grid.Row="1" Text="{Binding ViewModel.SelectedId, Mode=TwoWay}" Margin="0,0,10,10" />
+
+            <ui:TextBlock Grid.Row="2" x:Name="tbkAdminAgency" Margin="0,0,10,10">
+                <Run Text="Administrative Agency " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            
+            <ComboBox Grid.Row="3" x:Name="cbxAdminAgency" IsEditable="True" Text="{Binding ViewModel.SelectedAdministrativeAgency}" ItemsSource="{Binding ViewModel.AdministrativeAgency, Mode=TwoWay}" Margin="0,0,10,10" SelectionChanged="cbxAdminAgency_SelectionChanged" />
+
+            <ui:TextBlock Grid.Row="4" x:Name="tbkTotalPopulation" Margin="0,0,10,10">
+                <Run Text="Total Population " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            <ui:NumberBox Grid.Row="5" x:Name="tbxTotPopulation" Text="{Binding ViewModel.SelectedTotalPopulation, Mode=TwoWay}" Margin="0,0,10,10"/>
+
+            <ui:TextBlock Grid.Row="6" x:Name="tbkMalePopulation" Margin="0,0,10,10">
+                <Run Text="Male Population " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            <ui:NumberBox Grid.Row="7" x:Name="tbxMalePopulation" Text="{Binding ViewModel.SelectedMalePopulation, Mode=TwoWay}" Margin="0,0,10,10"/>
+
+            <ui:TextBlock Grid.Row="8" x:Name="tbkFemalePopulation" Margin="0,0,10,10">
+                <Run Text="FeMale Population " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            <ui:NumberBox Grid.Row="9" x:Name="tbxFemalePopulation" Text="{Binding ViewModel.SelectedFeMalePopulation, Mode=TwoWay}" Margin="0,0,10,10" />
+
+            <ui:TextBlock Grid.Row="10" x:Name="tbkSexRatio" Margin="0,0,10,10">
+                <Run Text="Sex Ratio " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            <ui:NumberBox Grid.Row="11" Text="{Binding ViewModel.SelectedSexRatio, Mode=TwoWay}" Margin="0,0,10,10" />
+
+            <ui:TextBlock Grid.Row="12" x:Name="tbkNumberOfHouseholds" Margin="0,0,10,10">
+                <Run Text="Number Of Households " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            <ui:NumberBox Grid.Row="13" Text="{Binding ViewModel.SelectedNumberOfHouseholds, Mode=TwoWay}" Margin="0,0,10,10" />
+
+            <ui:TextBlock Grid.Row="14" x:Name="tbkNumberOfPeoplePerHouseholds" Margin="0,0,10,10">
+                <Run Text="Number Of People Per Households " />
+                <Run Text="*" Foreground="OrangeRed"/>
+            </ui:TextBlock>
+            <ui:NumberBox Grid.Row="15" Text="{Binding ViewModel.SelectedNumberOfPeoplePerHouseholds, Mode=TwoWay}" Margin="0,0,10,10" />
+
+            <ui:Button Grid.Row="16" Height="50" Width="290" Command="{Binding ViewModel.CreateNewDataCommand}" Content="Create" Foreground="White" Background="SteelBlue" Margin="0,0,10,10"/>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ui:Button Grid.Column="0" Height="50" Width="140" Command="{Binding ViewModel.ReadAllDataCommand}" Content="Read All" Foreground="White" Background="YellowGreen" HorizontalAlignment="Center" Margin="0,0,10,10"/>
+                <ui:Button Grid.Column="1" Height="50" Width="140" Command="{Binding ViewModel.ReadDetailDataCommand}" Content="Read" Foreground="White" Background="YellowGreen" HorizontalAlignment="Center" Margin="0,0,10,10"/>
+            </Grid>
+
+            <ui:Button Grid.Row="18" Height="50" Width="290" Command="{Binding ViewModel.UpdateDataCommand}" Content="Update" Foreground="White" Background="Bisque" Margin="0,0,10,10"/>
+
+            <ui:Button Grid.Row="19" Height="50" Width="290" Command="{Binding ViewModel.DeleteDataCommand}" Content="Delete" Foreground="White" Background="IndianRed" Margin="0,0,10,10"/>
+        </Grid>
+
+        <controls:LoadingControl Grid.Column= "1" HorizontalAlignment="Center" x:Name="dgGridLoadingControl" Visibility="Visible"/>
+
+        <Grid x:Name="dgGrid" Visibility="Collapsed" Grid.Column= "1">
+            <DataGrid x:Name="dgGangnamguPopulation" ItemsSource="{Binding ViewModel.GangnamguPopulations, Mode=OneWay}"/>
+        </Grid>            
+    </Grid>                
+</Page>
