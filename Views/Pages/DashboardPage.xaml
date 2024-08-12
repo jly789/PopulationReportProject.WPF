@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0" x:Name="loadingGrid" Visibility="Visible">
-            <controls:LoadingControl />
+            <controls:LoadingControl Margin="10,-10,-10,10" />
         </Grid> <!-- Loading -->
 
         <Grid Grid.Column="0" x:Name="dashboardGrid" Visibility="Collapsed"> 
@@ -41,7 +41,7 @@
                 <ui:Card Background="DarkSlateGray" Margin="0,0,0,15">
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
                         <ui:SymbolIcon Symbol="Info28" FontSize="18" FontWeight="Bold" Margin="0,0,5,0"/>
-                        <ui:TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Text="Welecome To Gangnamgu-Popultaion Analysis Lab !"></ui:TextBlock>
+                        <ui:TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Text="Gangnamgu-Popultaion Report입니다"></ui:TextBlock>
                     </StackPanel>
                 </ui:Card>
             </Grid>
@@ -323,39 +323,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0" Margin="0,0,15,0">
-                    <ui:Card>
-                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                <ui:SymbolIcon Symbol="Link28" FontSize="18" FontWeight="Bold" Margin="0,0,5,0"/>
-                                <ui:TextBlock Text="Do you want to learn about WPF basic ?" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,0"/>
-                            </StackPanel>
-                            <ui:Button Width="300" Content="Click to Link!" FontSize="15" FontWeight="DemiBold" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" Background="MediumPurple" />
-                        </StackPanel>
-                    </ui:Card>
-                </Grid>
-                <Grid Grid.Column="1" Margin="0,0,15,0">
-                    <ui:Card>
-                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                <ui:SymbolIcon Symbol="Link28" FontSize="18" FontWeight="Bold" Margin="0,0,5,0"/>
-                                <ui:TextBlock Text="How about Blazor WebAssembly ?" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,0"/>
-                            </StackPanel>
-                            <ui:Button Command="{Binding ViewModel.GoToBlazorWasmLinkCommand}" Width="300" Content="Click to Link!" FontSize="15" FontWeight="DemiBold" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" Background="MediumPurple" />
-                        </StackPanel>
-                    </ui:Card>
-                </Grid>
-                <Grid Grid.Column="2" Margin="0,0,15,0">
-                    <ui:Card>
-                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                <ui:SymbolIcon Symbol="Link28" FontSize="18" FontWeight="Bold" Margin="0,0,5,0"/>
-                                <ui:TextBlock Text="Blazor ASP.NET Core also here !" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,0"/>
-                            </StackPanel>
-                            <ui:Button Width="300" Content="Click to Link!" FontSize="15" FontWeight="DemiBold" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" Background="MediumPurple" />
-                        </StackPanel>
-                    </ui:Card>
-                </Grid>
+         
+               
             </Grid>
         </Grid> <!-- Dashboard -->
     </Grid>
